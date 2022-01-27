@@ -1,6 +1,6 @@
 import Counter from "./components/Counter";
 import ClassCounter from "./components/ClassCounter";
-import {useRef, useState} from "react";
+import {useState} from "react";
 import PostList from "./components/PostList/PostList";
 import MyButton from "./components/UI/button/MyButton";
 import MyInput from "./components/UI/input/MyInput";
@@ -16,13 +16,16 @@ function App() {
   ]);
 
   const [title, setTitle] = useState('');
-
-  const bodyInputRef = useRef();
+  const [body, setBody] = useState('');
 
   const addNewPost = (e) => {
       e.preventDefault();
-      console.log(bodyInputRef.current.value);
-      console.log(title);
+      const newPost = {
+          id: Date.now(),
+          title,
+          body
+      }
+      setPosts([...posts, newPost]);
   }
 
   return (
@@ -37,9 +40,11 @@ function App() {
                      placeholder='Post name'
             />
             {/*Неуправляемый компонент*/}
-            <MyInput ref={bodyInputRef}
-                     type="text"
-                     placeholder='Post description'/>
+            <MyInput
+                value={body}
+                onChange={e => setBody(e.target.value)}
+                type="text"
+                placeholder='Post description'/>
             <MyButton onClick={addNewPost}>CREATE POST</MyButton>
         </form>
         <PostList posts={posts} title='Posts About JS'/>
