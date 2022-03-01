@@ -1,0 +1,16 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 100vw;
+    padding: 0 15px;
+    background-color: lightblue;
+}
+
+.navbar__links {
+    margin-left: auto;
+}
+
+.about {
+    margin-right: 15px;
+}
