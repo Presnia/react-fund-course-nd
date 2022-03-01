@@ -1,0 +1,9 @@
+.comments-page {
+    display: flex;
+    flex-direction: column;
+    max-width: 90%;
+}
+
+.title-id {
+    font-weight: 900;
+}

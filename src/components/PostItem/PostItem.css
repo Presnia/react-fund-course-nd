@@ -7,3 +7,10 @@
     border: 2px solid tomato;
     border-radius: 10px;
 }
+
+.post-buttons {
+    display: flex;
+    justify-content: space-between;
+    min-width: 20%;
+    margin-left: 15px;
+}
