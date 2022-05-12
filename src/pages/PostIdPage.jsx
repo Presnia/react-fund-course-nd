@@ -20,8 +20,8 @@ const PostIdPage = () => {
     });
 
     useEffect(() => {
-        fetchPostById(params.id);
-        fetchComments(params.id);
+        fetchPostById(params.id).then();
+        fetchComments(params.id).then();
     }, []);
 
     return (
